@@ -1,0 +1,183 @@
+/* src/index.css - COMPLETE WITH ANIMATIONS */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Global Styles */
+:root {
+  --z-base: 1;
+  --z-header: 10;
+  --z-dropdown: 1000;
+  --z-modal: 2000;
+  --color-primary: #ec4899;
+  --color-secondary: #3b82f6;
+  --color-accent: #8b5cf6;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+button, a {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+@layer base {
+  body {
+    @apply antialiased font-sans;
+    background-color: #f9fafb;
+  }
+
+  h1 {
+    @apply font-light tracking-tight;
+  }
+
+  h2, h3 {
+    @apply font-semibold tracking-tight;
+  }
+
+  button {
+    @apply transition-all duration-300;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn var(--transition-normal) forwards;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight var(--transition-normal) forwards;
+  }
+
+  .transition-smooth {
+    @apply transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+@media (max-width: 1024px) {
+  .gid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* ===== Micro Interactions ===== */
+.interactive {
+  transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+}
+.sidebar-item {
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.sidebar-item:hover {
+  background-color: rgba(0,0,0,0.04);
+  transform: translateX(4px);
+}
+
+.interactive:active {
+  transform: scale(0.97);
+}
+
+/* Soft hover glow */
+.hover-glow:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.animate-scale-in {
+  animation: scaleIn 0.15s ease-out;
+}
