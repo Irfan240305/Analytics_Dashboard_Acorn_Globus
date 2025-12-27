@@ -50,6 +50,17 @@
 1) The application is designed with a desktop-first approach while maintaining responsiveness across smaller screen sizes.
 
 2) The layout adapts smoothly to different screen widths, ensuring readability and usability across devices.
+3) 
+📱** Mobile Responsiveness**
+
+The dashboard is designed with a **responsive layout** that adapts smoothly to different screen sizes.
+
+While the primary focus was on desktop (as per the assignment), the UI also works well on mobile devices:
+- Layout adjusts automatically based on screen width  
+- Content remains readable and usable on smaller screens  
+- Components resize gracefully without breaking the layout  
+
+This ensures a consistent user experience across devices.
 
 🧠 **What I Learned**
 
