@@ -50,8 +50,8 @@
 1) The application is designed with a desktop-first approach while maintaining responsiveness across smaller screen sizes.
 
 2) The layout adapts smoothly to different screen widths, ensuring readability and usability across devices.
-3) 
-📱** Mobile Responsiveness**
+
+📱 **Mobile Responsiveness**
 
 The dashboard is designed with a **responsive layout** that adapts smoothly to different screen sizes.
 
